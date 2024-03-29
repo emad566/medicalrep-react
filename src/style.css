@@ -1,0 +1,7 @@
+.rdt_Table .rdt_TableBody .rdt_TableCell {
+    padding: 0 !important; 
+}
+
+.theme-form .form-group {
+    margin-bottom: 10px;
+}

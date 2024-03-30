@@ -5,7 +5,7 @@ const Notifications = props => {
     return (
         <Fragment>
             <div>
-                <ul className="notification-dropdown onhover-show-div p-0">
+                {/* <ul className="notification-dropdown onhover-show-div p-0">
                     <li>{Notification} <span className="badge rounded-pill badge-primary pull-right">{"3"}</span></li>
                     <li>
                         <div className="d-flex">
@@ -32,7 +32,7 @@ const Notifications = props => {
                         </div>
                     </li>
                     <li className="txt-dark"><a href="#javascript">{All}</a> {Notification}</li>
-                </ul>
+                </ul> */}
             </div>
         </Fragment>
     );

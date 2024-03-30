@@ -38,11 +38,14 @@ const Signin = () => {
     const responseJson = await loginTenant(customer, email, password);
     if (responseJson.status) {
       localStorage.setItem(AppCaches.login, true);
-      localStorage.setItem(AppCaches.token, responseJson.data.token);
+      localStorage.setItem(AppCaches.token, responseJson.data.access_token);
       localStorage.setItem(AppCaches.customer, responseJson.data.customer);
-      localStorage.setItem(AppCaches.loginName, responseJson.data.user.name);
+      localStorage.setItem(
+        AppCaches.loginName,
+        responseJson.data.current_login_name
+      );
       localStorage.setItem(AppCaches.loginData, responseJson.data);
-      navigate(`${process.env.PUBLIC_URL}/dashboard/users`);
+      navigate(`${process.env.PUBLIC_URL}/dashboard/home`);
     } else {
       toast.error(responseJson.message);
     }

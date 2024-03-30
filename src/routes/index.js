@@ -72,8 +72,8 @@ const MainRoutes = () => {
             <Route path="/" element={<PrivateRoute />}>
               {currentUser !== null || authenticated || true ? (
                 <>
-                  <Route exact path={`${process.env.PUBLIC_URL}`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/users`} />} />
-                  <Route exact path={`/`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/users`} />} />
+                  <Route exact path={`${process.env.PUBLIC_URL}`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/home`} />} />
+                  <Route exact path={`/`} element={<Navigate to={`${process.env.PUBLIC_URL}/dashboard/home`} />} />
                 </>
               ) : (
                 ""

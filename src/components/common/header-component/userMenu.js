@@ -3,8 +3,11 @@ import man from "../../../assets/images/dashboard/user.png";
 import { User, Mail, Lock, Settings, LogOut } from "react-feather";
 import { Link, useNavigate } from "react-router-dom";
 import { EditProfile, Inbox, LockScreen } from "../../../constant";
+import AppLangKeys from "../../../localization/AppLangKeys";
+import { useTranslation } from "react-i18next";
 
 const UserMenu = () => {
+  const {t} = useTranslation();
   const [profile, setProfile] = useState("");
   const authenticated = JSON.parse(localStorage.getItem("authenticated"));
   const auth0_profile = JSON.parse(localStorage.getItem("auth0_profile"));
@@ -33,7 +36,7 @@ const UserMenu = () => {
           </div>
         </div>
         <ul className="profile-dropdown onhover-show-div p-20 profile-dropdown-hover">
-          <li>
+          {/* <li>
             <Link to={`${process.env.PUBLIC_URL}/users/userEdit`}>
               <User />
               {EditProfile}
@@ -50,16 +53,16 @@ const UserMenu = () => {
               <Lock />
               {LockScreen}
             </a>
-          </li>
+          </li> */}
           <li>
-            <a href="#javascript">
+            <Link to={`${process.env.PUBLIC_URL}/dashboard/settings`}>
               <Settings />
-              {"Settings"}
-            </a>
+              {t(AppLangKeys.settings)}
+            </Link>
           </li>
           <li>
             <a onClick={Logout} href="#javascript">
-              <LogOut /> {"Log out"}
+              <LogOut /> {t(AppLangKeys.logout)}
             </a>
           </li>
         </ul>

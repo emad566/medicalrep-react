@@ -93,7 +93,7 @@ const Header = () => {
         <div className="main-header-right row">
           <div className="main-header-left d-lg-none col-auto">
             <div className="logo-wrapper">
-              <Link to={`${process.env.PUBLIC_URL}/dashboard/users`}>
+              <Link to={`${process.env.PUBLIC_URL}/dashboard/home`}>
                 <img className="img-fluid" src={logo} alt="" />
               </Link>
             </div>

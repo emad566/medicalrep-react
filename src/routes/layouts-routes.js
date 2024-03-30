@@ -178,8 +178,12 @@ import Pricing from "../components/price/pricing";
 import Permissions from "../pages/permissions/permissions";
 import Roles from "../pages/roles/Roles";
 import Users from "../pages/users/Users";
+import HomePage from "../pages/home/HomePage";
+import Settings from "../pages/settings/Settings";
 
 export const routes = [
+  { path: `${process.env.PUBLIC_URL}/dashboard/home`, Component: <HomePage /> },
+  { path: `${process.env.PUBLIC_URL}/dashboard/settings`, Component: <Settings /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/users`, Component: <Users /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/roles`, Component: <Roles /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/permissions`, Component: <Permissions /> },

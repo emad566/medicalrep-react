@@ -16,7 +16,7 @@ const Error403 = () => {
                         <div className="col-md-8 offset-md-2">
                             <p className="sub-content">{"The page you are attempting to reach is currently not available. This may be because the page does not exist or has been moved."}</p>
                         </div>
-                        <div><Link to={`${process.env.PUBLIC_URL}/dashboard/users`} className="btn btn-success-gradien"> {BACK_TO_HOME_PAGE}</Link></div>
+                        <div><Link to={`${process.env.PUBLIC_URL}/dashboard/home`} className="btn btn-success-gradien"> {BACK_TO_HOME_PAGE}</Link></div>
                     </div>
                 </div>
                 {/* <!-- error-403 end--> */}

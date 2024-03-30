@@ -1,8 +1,8 @@
 {
-  "name": "wickkbot",
+  "name": "medicalrep",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wickkbot.com",
+  "homepage": "https://emadw3.com",
   "dependencies": {
     "@auth0/auth0-react": "^2.0.1",
     "@fullcalendar/daygrid": "^6.1.4",

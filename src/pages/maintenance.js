@@ -17,7 +17,7 @@ const Maintenance = () => {
                         </div>
                         <h4 className="sub-content">{"Our Site is Currently under maintenance We will be back Shortly"} <br />
                             {"Thank You For Patience"}</h4>
-                        <div><Link className="btn btn-info-gradien btn-lg text-light" to={`${process.env.PUBLIC_URL}/dashboard/users`}>{BACK_TO_HOME_PAGE}</Link></div>
+                        <div><Link className="btn btn-info-gradien btn-lg text-light" to={`${process.env.PUBLIC_URL}/dashboard/home`}>{BACK_TO_HOME_PAGE}</Link></div>
                     </div>
                 </div>
             </div>

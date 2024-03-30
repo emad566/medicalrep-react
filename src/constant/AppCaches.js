@@ -5,6 +5,7 @@
     login : "login",
     loginData : "loginData",
     loginName : "loginName",
+    lang : "lang",
 }
 
 export default AppCaches;

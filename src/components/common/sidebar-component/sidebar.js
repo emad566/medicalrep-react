@@ -176,7 +176,7 @@ const Sidebar = (props) => {
             <div className="page-sidebar">
                 <div className="main-header-left d-none d-lg-block">
                     <div className="logo-wrapper compactLogo">
-                        <Link to={`${process.env.PUBLIC_URL}/dashboard/users`}>
+                        <Link to={`${process.env.PUBLIC_URL}/dashboard/home`}>
                             <img className="blur-up lazyloaded" src={logo_compact} alt="" />
                             <img className="blur-up lazyloaded" src={logo} alt="" />
                         </Link>

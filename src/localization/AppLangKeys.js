@@ -80,6 +80,10 @@
     select: "Select",
     passwordConfirmation: "Password confirmation",
     passwordsMustMatch: "Passwords must match",
+    HomePage: "Home Page",
+    settings: "Settings",
+    content: "Content",
+    logout: "Logout",
 }
 
 export default AppLangKeys;

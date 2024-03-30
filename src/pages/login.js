@@ -15,7 +15,7 @@ const Logins = () => {
     });
 
     const loginAuth = () => {
-        history(`${process.env.PUBLIC_URL}/dashboard/users`);
+        history(`${process.env.PUBLIC_URL}/dashboard/home`);
     }
 
 

@@ -10,7 +10,7 @@ export class ConfigDB {
 			sidebar_backround: 'dark-sidebar'
 		},
 		color: {
-			layout_version: 'light',
+			layout_version: 'light-only',
 			color: 'color-1',
 			primary_color: '#4466f2',
 			secondary_color: '#1ea6ec',

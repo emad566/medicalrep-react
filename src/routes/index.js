@@ -29,6 +29,7 @@ import { Loader } from "react-feather";
 import GuestRoute from "./guest-route";
 import i18n from "../i18n";
 import { useDispatch } from "react-redux";
+import AppCaches from "../constant/AppCaches";
 
 const MainRoutes = () => {
   const [currentUser, setCurrentUser] = useState(false);
@@ -49,20 +50,28 @@ const MainRoutes = () => {
     };
   }, []);
 
-  const lang = localStorage.getItem('lang')?? "ar";
   
-  i18n.changeLanguage(lang);
 
+  // Start: Handle Lang layout
   const dispatch = useDispatch();
-    const handleLayout = (layout) => {
+  const handleLayout = () => {
+        const layout = localStorage.getItem(AppCaches.layout);
+        const lang = localStorage.getItem(AppCaches.lang);
+        i18n.changeLanguage(lang);
+
+        localStorage.setItem(AppCaches.layout, layout);
         document.querySelectorAll(".main-layout li").forEach((item) => {
             item.classList.remove('active');
         });
         document.body.setAttribute('main-theme-layout', layout);
         document.documentElement.dir = layout;
         dispatch({ type: 'ADD_LAYOUT', payload: layout });
+        alert(`${layout}, ${lang}`);
   }
-  handleLayout(lang == 'ar'? 'rtl' : 'ltr');
+  useEffect(() => {
+      handleLayout();
+    });
+  // End: Handle Lang layout
 
   return (
     <>

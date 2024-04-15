@@ -1,10 +1,14 @@
 import React, { Fragment, useState, useEffect } from "react";
 import man from "../../../assets/images/dashboard/user.png";
 import { User, Mail, Lock, Settings, LogOut } from "react-feather";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Route, useNavigate } from "react-router-dom";
 import { EditProfile, Inbox, LockScreen } from "../../../constant";
 import AppLangKeys from "../../../localization/AppLangKeys";
 import { useTranslation } from "react-i18next";
+import AppCaches from "../../../constant/AppCaches";
+import { toast } from "react-toastify";
+import { apiPost } from "../../../api/http";
+import Routes from "../../../constant/Routes";
 
 const UserMenu = () => {
   const {t} = useTranslation();
@@ -17,19 +21,25 @@ const UserMenu = () => {
     setProfile(localStorage.getItem("profileURL") || man);
   }, []);
 
-  const Logout = () => {
-    localStorage.removeItem("profileURL");
-    localStorage.removeItem("token");
-    localStorage.removeItem("token");
-
+  const Logout = async () => {
+    
+    const responseJson = await apiPost(Routes.LOGOUT);
+    if (responseJson.status) {
+      toast.success(responseJson.message)
+    } else {
+      toast.error(responseJson.message);
+    }
+    localStorage.clear();
     navigate(`${process.env.PUBLIC_URL}/login`);
   };
+
+  const loginData = JSON.parse(localStorage.getItem(AppCaches.loginData))
 
   return (
     <Fragment>
       <li className="onhover-dropdown">
         <div className="d-flex align-items-center">
-          <img className="align-self-center pull-right img-50 rounded-circle blur-up lazyloaded" src={authenticated ? auth0_profile.picture : profile} alt="header-user" />
+          <img className="align-self-center pull-right img-50 rounded-circle blur-up lazyloaded" width={100}  src={loginData?.image} alt="header-user" />
           <div className="dotted-animation">
             <span className="animate-circle"></span>
             <span className="main-circle"></span>

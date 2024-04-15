@@ -1,0 +1,47 @@
+.rdt_TableBody>.rdt_TableRow>span {
+    display: none;
+}
+
+@media only screen and (max-width: 992px) {
+    .rdt_TableHeadRow {
+        display: none !important;
+    }
+
+    .rdt_TableBody>.rdt_TableRow {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        padding-top: 22px;
+        position: relative;
+        padding-right: 60px !important;
+    }
+
+    .rdt_TableBody>.rdt_TableRow .rdt_TableCell {
+        justify-content: start;
+    }
+
+    .rdt_TableBody>.rdt_TableRow>span {
+        content: "+";
+        cursor: pointer;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        border-radius: 50%;
+        background-color: green;
+        margin-right: 10px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    .rdt_TableBody>.rdt_TableRow>.rdt_TableCell {
+        display: none;
+    }
+
+    .rdt_TableBody>.rdt_TableRow>.rdt_TableCell:nth-child(3) {
+        display: inline;
+        font-weight: bold;
+    }
+}   

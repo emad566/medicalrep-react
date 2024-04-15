@@ -29,7 +29,7 @@ function CreateSetting({
 
   const validationSchema = Yup.object({
     set_value: Yup.string()
-      .max(191, t(AppLangKeys.mustBe_50CharactersOrLess))
+      .max(1000, t(AppLangKeys.mustBe_1000CharactersOrLess))
       .min(0, t(AppLangKeys.mustBe_3CharactersAtLess))
       .required(t(AppLangKeys.required)),
   });

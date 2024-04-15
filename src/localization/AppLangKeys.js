@@ -66,6 +66,7 @@
     createUser : "Create user",
 
     mustBe_50CharactersOrLess : "Must be 50 characters or less",
+    mustBe_1000CharactersOrLess : "Must be 1000 characters or less",
     mustBe_3CharactersAtLess : "Must be 3 characters at less",
     required : "Required",
     invalidEmailAddresss : "Invalid email addresss",

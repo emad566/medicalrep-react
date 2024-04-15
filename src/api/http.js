@@ -5,8 +5,6 @@ import { BearerTOKEN, CUSTOMER } from "../constant/constants";
 export async function loginTenant(customer, email, password){
     const fullPath = Routes.apiUrl + 'auth/login';
     const data = {customer: customer, appVersion: Routes.appVersion, email: email, password: password};
-    console.log(fullPath);
-    console.log(data);
 
     try { 
         const response = await fetch(fullPath, {
@@ -21,7 +19,6 @@ export async function loginTenant(customer, email, password){
         });
     
         if (!response.ok) {
-            console.log (response); 
             throw new Error('Failed to fetch post loginTenant');
         }
 

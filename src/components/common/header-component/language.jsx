@@ -14,12 +14,13 @@ const Language = () => {
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setSelected(lng);
-    localStorage.setItem("lang", lng);
+    localStorage.setItem(AppCaches.lang, lng);
     handleLayout(lng == "ar" ? "rtl" : "ltr");
   };
 
   const dispatch = useDispatch();
   const handleLayout = (layout) => {
+    localStorage.setItem(AppCaches.layout, layout);
     document.querySelectorAll(".main-layout li").forEach((item) => {
       item.classList.remove("active");
     });

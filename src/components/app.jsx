@@ -7,8 +7,12 @@ import ThemeCustomizer from "./common/theme-customizer";
 import { ToastContainer } from "react-toastify";
 // import Loader from "./common/loader";
 import { Outlet } from "react-router-dom";
+import i18n from "../i18n";
+import { useDispatch } from "react-redux";
+import AppCaches from "../constant/AppCaches";
 
 const AppLayout = (props) => {
+  
   return (
     <Fragment>
       {/* <Loader /> */}

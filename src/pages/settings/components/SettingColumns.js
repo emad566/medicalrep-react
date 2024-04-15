@@ -16,7 +16,7 @@ export const SettingColumns = (page, perPage, toggleHandler) => {
       },
       sortable: false,
       center: true,
-      width: "5%",
+      grow: 1,
     },
     {
       name: t("Name"),
@@ -24,7 +24,8 @@ export const SettingColumns = (page, perPage, toggleHandler) => {
       selector: (row) => localStorage.getItem(AppCaches.lang) == 'ar'? row.description_ar : row.description_en,
       sortable: true,
       center: false,
-      width: "25%",
+      grow: 5,
+      maxWidth: "350px"
     },
     
     {
@@ -33,8 +34,8 @@ export const SettingColumns = (page, perPage, toggleHandler) => {
       selector: (row) => row.set_value,
       sortable: true,
       center: false,
-      width: "60%",
-      class: ""
+      grow: 30,
+      maxWidth: "550px"
     },
     
     {
@@ -44,7 +45,7 @@ export const SettingColumns = (page, perPage, toggleHandler) => {
           </div>,
       sortable: false,
       center: true,
-      width: "10%",
+      grow: 2,
     },
   ];
 };

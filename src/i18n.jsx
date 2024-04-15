@@ -255,6 +255,9 @@ i18n
 
           [AppLangKeys.mustBe_50CharactersOrLess]:
             "يجب أن يكون 50 حرفًا أو أقل",
+
+          [AppLangKeys.mustBe_1000CharactersOrLess]:
+            "يجب أن يكون 1000 حرفًا أو أقل",
           [AppLangKeys.mustBe_3CharactersAtLess]:
             "يجب أن يكون 3 أحرف على الأقل",
           [AppLangKeys.required]: "مطلوب",
@@ -278,7 +281,7 @@ i18n
         },
       },
     },
-    fallbackLng: "ar",
+    fallbackLng: "en",
     debug: false,
 
     // have a common namespace used around the full app

@@ -8,5 +8,6 @@ export default {
     PERMISSIONS: `${apiUrl}permissions`,
     USERS: `${apiUrl}users`,
     SETTINGS: `${apiUrl}settings`,
+    LOGOUT: `${apiUrl}users/logout`,
 };
 

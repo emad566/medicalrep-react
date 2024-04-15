@@ -25,6 +25,15 @@ const Signin = () => {
   const [value, setValue] = useState(localStorage.getItem("profileURL" || man));
 
   useEffect(() => {
+    const isLang = ["ar", "en"].includes(localStorage.getItem(AppCaches.lang));
+    if (!isLang) {
+      localStorage.setItem(AppCaches.lang, "ar");
+      localStorage.setItem(AppCaches.i18nextLng, "ar");
+      localStorage.setItem(AppCaches.layout, "rtl");
+    }
+  }, []);
+
+  useEffect(() => {
     if (value !== null) localStorage.setItem("profileURL", value);
     else localStorage.setItem("profileURL", man);
   }, [value]);
@@ -44,7 +53,10 @@ const Signin = () => {
         AppCaches.loginName,
         responseJson.data.current_login_name
       );
-      localStorage.setItem(AppCaches.loginData, responseJson.data);
+      localStorage.setItem(
+        AppCaches.loginData,
+        JSON.stringify(responseJson.data)
+      );
       navigate(`${process.env.PUBLIC_URL}/dashboard/home`);
     } else {
       toast.error(responseJson.message);
@@ -54,13 +66,13 @@ const Signin = () => {
 
   return (
     <div>
-      <div className="page-wrapper">
+      <div className="page-wrapper" style={{ overflow: "hidden" }}>
         <div className="container-fluid p-0">
           <div className="auth-bg-video">
             <video
               id="bgvid"
               poster={comingsoon}
-              playsInline=""
+              playsInline={true}
               autoPlay={true}
               muted={true}
               loop={true}
@@ -77,7 +89,7 @@ const Signin = () => {
                       <div className="text-center">
                         <img src={logo} alt="" />
                       </div>
-                      <div className="card mt-4">
+                      <div className="card mt-4 px-50">
                         <div className="card-body">
                           <div className="text-center">
                             <h4>{t(AppLangKeys.LOGIN)}</h4>
@@ -132,7 +144,7 @@ const Signin = () => {
                             <div className="form-group form-row mt-3 mb-0 d-grid">
                               {!isFetching && (
                                 <button
-                                  className="btn btn-danger"
+                                  className="btn btn-primary"
                                   type="button"
                                   onClick={() => loginAuth()}
                                 >

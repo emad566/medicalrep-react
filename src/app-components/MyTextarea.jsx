@@ -7,7 +7,13 @@ const MyTextarea = ({ label, ...props }) => {
       <label className="col-form-label" htmlFor={props.id || props.name}>
         {label}
       </label>
-      <textarea className="form-control mb-2" rows={5} {...field} {...props}>
+      <textarea
+        className="form-control mb-2"
+        rows={5}
+        maxLength={1000}
+        {...field}
+        {...props}
+      >
         {field.value}
       </textarea>
       {meta.touched && meta.error ? (

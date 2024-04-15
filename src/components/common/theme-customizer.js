@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { toast } from 'react-toastify';
 import { Customize, Customizer, Color, Pattern, Image, LayoutType, RTLLayout, LTRLayout, SidebarBackgroundSetting, PreviewRealTime, CopyText, ModalTitle, SidebarType, Default, Border, IconColor, DarkLayout, MixLayout, LightLayout, Cancel, Configuration, SidebarSettings } from '../../constant'
+import AppCaches from '../../constant/AppCaches';
 
 const ThemeCustomizer = () => {
 
@@ -114,6 +115,7 @@ const ThemeCustomizer = () => {
 
     const handleLayout = (layout) => {
         setLayout_type(layout)
+        localStorage.setItem(AppCaches.layout, layout);
         document.querySelectorAll(".main-layout li").forEach((item) => {
             item.classList.remove('active');
         });

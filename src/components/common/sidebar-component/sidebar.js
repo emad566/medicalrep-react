@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import logo from '../../../assets/images/endless-logo.png';
 import logo_compact from '../../../assets/images/logo/compact-logo.png';
 import UserPanel from './userPanel';
@@ -7,6 +7,8 @@ import { MENUITEMS } from '../../../components/common/sidebar-component/menu';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import configDB from '../../../data/customizer/config';
+import AppCaches from '../../../constant/AppCaches';
+import i18n from '../../../i18n';
 
 const Sidebar = (props) => {
     const [margin, setMargin] = useState(0);
@@ -17,7 +19,8 @@ const Sidebar = (props) => {
     const [hideLeftArrow, setHideLeftArrow] = useState(true);
     const [mainmenu, setMainMenu] = useState({mainmenu: MENUITEMS});
     const wrapper = configDB.data.settings.sidebar.wrapper;
-    const layout = useSelector(content => content.Customizer.layout);
+    // const layout = useSelector(content => content.Customizer.layout);
+    const layout = localStorage.getItem(AppCaches.layout); 
     const { t } = useTranslation();
 
     useEffect(() => {
@@ -93,10 +96,21 @@ const Sidebar = (props) => {
             return menuItem
         })
         item.active = !item.active
-        setMainMenu({ mainmenu: MENUITEMS })
+        setMainMenu({ mainmenu: MENUITEMS });
     }
+
+    
+
+
     // Click Toggle menu
     const toggletNavActive = (item) => {
+
+
+        if(window.innerWidth < 992){
+            document.querySelector(".page-main-header").classList.add('open');
+            document.querySelector(".page-sidebar").classList.add('open');
+        }
+
         if (!item.active) {
             MENUITEMS.forEach(a => {
                 if (MENUITEMS.includes(item))
@@ -116,7 +130,7 @@ const Sidebar = (props) => {
             });
         }
         item.active = !item.active
-        setMainMenu({ mainmenu: MENUITEMS })
+        setMainMenu({ mainmenu: MENUITEMS });
     }
 
     const scrollToRight = () => {
@@ -171,6 +185,32 @@ const Sidebar = (props) => {
         }
     }
 
+    const loginData = JSON.parse(localStorage.getItem(AppCaches.loginData))
+
+    // Start: Handle Lang layout
+    // const dispatch = useDispatch();
+    // const handleLayout = () => {
+    //         const layout = localStorage.getItem(AppCaches.layout);
+    //         const lang = localStorage.getItem(AppCaches.lang);
+    //         i18n.changeLanguage(lang);
+
+    //         localStorage.setItem(AppCaches.layout, layout);
+    //         document.querySelectorAll(".main-layout li").forEach((item) => {
+    //             item.classList.remove('active');
+    //         });
+    //         document.body.setAttribute('main-theme-layout', layout);
+    //         document.documentElement.dir = layout;
+    //         // dispatch({ type: 'ADD_LAYOUT', payload: layout });
+    //         console.log(`${layout}, ${lang}`);
+    // }
+    // useEffect(() => {
+    //   handleLayout();
+    // }, []);
+  // End: Handle Lang layout
+
+    
+    
+
     return (
         <Fragment>
             <div className="page-sidebar">
@@ -178,7 +218,7 @@ const Sidebar = (props) => {
                     <div className="logo-wrapper compactLogo">
                         <Link to={`${process.env.PUBLIC_URL}/dashboard/home`}>
                             <img className="blur-up lazyloaded" src={logo_compact} alt="" />
-                            <img className="blur-up lazyloaded" src={logo} alt="" />
+                            <img width={220} height={65} className="blur-up lazyloaded" src={loginData?.image} alt="" />
                         </Link>
                     </div>
                 </div>

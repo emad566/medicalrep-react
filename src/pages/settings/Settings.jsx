@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
-import { apiDelete, apiGet, apiPost, apiPut } from "../../api/http";
+import { apiGet} from "../../api/http";
 import { toast } from "react-toastify";
 import Routes from "../../constant/Routes";
 import { SettingColumns } from "./components/SettingColumns";
@@ -9,6 +9,7 @@ import CustomLoadingSpinner from "../../app-components/CustomLoadingSpinner";
 import CreateTenant from "./components/CreateSetting";
 import AppLangKeys from "../../localization/AppLangKeys";
 import { useTranslation } from "react-i18next";
+import ResponsiveDataTable from "../../app-components/ResponsiveDataTable";
 
 const Settings = () => {
   const { t } = useTranslation();
@@ -65,6 +66,7 @@ const Settings = () => {
     }));
   }
 
+
   return (
     <Fragment>
       <TableCaption
@@ -109,63 +111,65 @@ const Settings = () => {
               </div>
 
               <div className="card-header">
-                <DataTable
-                  columns={SettingColumns(
-                    queryParams.page,
-                    queryParams.paginationCounter,
-                    toggleCreateHandler
-                  )}
-                  data={data.data}
-                  striped
-                  fixedHeader
-                  fixedHeaderScrollHeight={`${screenHeight - 300}px`}
-                  progressPending={loading}
-                  progressComponent={<CustomLoadingSpinner />}
-                  pagination
-                  paginationServer
-                  sortServer
-                  paginationTotalRows={data?.meta?.total ?? 10}
-                  onSort={async (columnState, sortDirection) => {
-                    const queryData = {
-                      ...queryParams,
-                      sortDirection: sortDirection,
-                      sortColumnName: columnState.columnName,
-                    };
-                    setQueryParams((prev) => queryData);
-                    await handleList(queryData, false);
-                  }}
-                  onChange={async (tableState) => {
-                    const {
-                      rowsPerPage,
-                      page,
-                      sortField,
-                      sortAsc,
-                      searchTerm,
-                    } = tableState;
-                    const queryData = {
-                      paginationCounter: rowsPerPage,
-                      page: page,
-                      sortColumnName: sortField,
-                      sortDirection: sortAsc ? "asc" : "desc",
-                      glopaleSearch: searchTerm || "",
-                    };
-                    setQueryParams((prev) => queryData);
-                    await handleList(queryData);
-                  }}
-                  onChangeRowsPerPage={async (newPaginationCounter) => {
-                    const queryData = {
-                      ...queryParams,
-                      paginationCounter: newPaginationCounter,
-                    };
-                    setQueryParams((prev) => queryData);
-                    await handleList(queryData);
-                  }}
-                  onChangePage={async (newPageNumber) => {
-                    const queryData = { ...queryParams, page: newPageNumber };
-                    setQueryParams((prev) => queryData);
-                    await handleList(queryData);
-                  }}
-                />
+                <ResponsiveDataTable data={data}>
+                  <DataTable
+                    columns={SettingColumns(
+                      queryParams.page,
+                      queryParams.paginationCounter,
+                      toggleCreateHandler
+                    )}
+                    data={data.data}
+                    striped
+                    fixedHeader
+                    fixedHeaderScrollHeight={`${screenHeight - 300}px`}
+                    progressPending={loading}
+                    progressComponent={<CustomLoadingSpinner />}
+                    pagination
+                    paginationServer
+                    sortServer
+                    paginationTotalRows={data?.meta?.total ?? 10}
+                    onSort={async (columnState, sortDirection) => {
+                      const queryData = {
+                        ...queryParams,
+                        sortDirection: sortDirection,
+                        sortColumnName: columnState.columnName,
+                      };
+                      setQueryParams((prev) => queryData);
+                      await handleList(queryData, false);
+                    }}
+                    onChange={async (tableState) => {
+                      const {
+                        rowsPerPage,
+                        page,
+                        sortField,
+                        sortAsc,
+                        searchTerm,
+                      } = tableState;
+                      const queryData = {
+                        paginationCounter: rowsPerPage,
+                        page: page,
+                        sortColumnName: sortField,
+                        sortDirection: sortAsc ? "asc" : "desc",
+                        glopaleSearch: searchTerm || "",
+                      };
+                      setQueryParams((prev) => queryData);
+                      await handleList(queryData);
+                    }}
+                    onChangeRowsPerPage={async (newPaginationCounter) => {
+                      const queryData = {
+                        ...queryParams,
+                        paginationCounter: newPaginationCounter,
+                      };
+                      setQueryParams((prev) => queryData);
+                      await handleList(queryData);
+                    }}
+                    onChangePage={async (newPageNumber) => {
+                      const queryData = { ...queryParams, page: newPageNumber };
+                      setQueryParams((prev) => queryData);
+                      await handleList(queryData);
+                    }}
+                  />
+                </ResponsiveDataTable>
               </div>
             </div>
           </div>

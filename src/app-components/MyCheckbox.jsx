@@ -2,7 +2,6 @@ import { useField } from "formik";
 
 const MyCheckbox = ({ children, ...props }) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
-  console.log(11, field);
   return (
     <div className="form-group">
       <div>

@@ -6,6 +6,8 @@
     loginData : "loginData",
     loginName : "loginName",
     lang : "lang",
+    i18nextLng : "i18nextLng",
+    layout : "layout",
 }
 
 export default AppCaches;

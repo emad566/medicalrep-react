@@ -13,7 +13,6 @@ import MainRoutes from "./routes";
 
 const Root = () => {
 
-
   return (
     <div className="App">
       <Provider store={store}>

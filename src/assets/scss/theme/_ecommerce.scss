@@ -103,20 +103,6 @@
     }
   }
 }
-.slick-prev ,.slick-next {
-  &:before {
-    color: #898989 !important;
-  }
-}
-.product-filter {
-  .slick-slider {
-    .product-box {
-      +.product-box {
-        margin-top: 15px;
-      }
-    }
-  }
-}
 .d-none-productlist {
   display: none;
   svg {

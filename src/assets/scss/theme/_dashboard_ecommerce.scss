@@ -351,6 +351,14 @@
   justify-content: center;
   vertical-align: middle;
 }
+@media only screen and (min-width: 1440px){
+  .sellers{
+    table{
+      min-width: 500px;
+      overflow: auto;
+    }
+  }
+}
 @media only screen and (max-width: 1660px){
   .support-table {
     table{
@@ -363,14 +371,6 @@
           }
         }
       }
-    }
-  }
-}
-@media only screen and (max-width: 1500px){
-  .sellers{
-    table{
-      min-width: 500px;
-      overflow: auto;
     }
   }
 }
@@ -481,6 +481,12 @@
   }
 }
 @media only screen and (max-width: 360px){
+  .sellers{
+    table{
+      min-width: 500px;
+      overflow: auto;
+    }
+  }
   .animate-curve2 {
     span{
       &.ct-label{

@@ -6,4 +6,79 @@
     margin-bottom: 10px;
 }
 
+.sidebar-menu li.active {
+    border-bottom: solid 1px #bbb;
+}
 
+/* .rbt-aux button .rbt-close-content {
+    background: none;
+    margin: 10px;
+
+    .rbt-close-content {
+        font-size: 32px;
+    }
+} */
+.has-aux{
+    display: inline-flex !important;
+}
+
+.rbt-input-multi{
+    
+
+    .rbt-token-removeable {
+        display: inline-flex;
+        padding: 0px 5px;
+        margin: 3px;
+        border-radius: 8px;
+
+        div {
+            font-size: 12px;
+        }
+
+        button {
+            font-size: 16px;
+            margin-top: -1px;
+            display: block;
+        }
+        .btn-close::before{
+            content: '';
+        }
+
+        .btn-close {
+            max-height: 10px;
+            padding: 5px 0px ;
+            margin: 10px;
+            margin-top: -5px;
+            width: 0px;
+            
+        }
+    }
+}
+
+#multiple-typeahead a{
+    padding: 3px 20px !important;
+    margin: 3px 2px !important;
+}
+
+.btn-close {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.btn-close::before {
+    content: "×";
+    font-size: 1.5rem;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn-close:hover::before {
+    color: red;
+}

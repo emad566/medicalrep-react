@@ -123,6 +123,7 @@
       padding-bottom: 0;
     }
   }
+
 }
 .ranker{
   h6{
@@ -133,8 +134,9 @@
   }
 }
 .height-curves{
-  height: 530px;
+  max-height: 432px;
 }
+
 .notifiaction-media{
   .d-flex{
     margin-bottom: 32px;
@@ -424,9 +426,6 @@
   }
   .animate-curve {
     height: 388px;
-    canvas {
-      height: 400px !important;
-    }
     .ct-chart{
       height: 388px;
     }
@@ -452,9 +451,6 @@
     }
   }
   .animate-curve2{
-    canvas {
-      height: 480px !important;
-    }
     .ct-chart{
       height: 450px;
       .ct-series-a{

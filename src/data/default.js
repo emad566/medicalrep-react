@@ -1,6 +1,5 @@
 import "chartjs-plugin-datalabels";
-import * as Chartist from "chartist";
-import configDB from "../data/customizer/config";
+import configDB from "./customizer/config";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 const primary = localStorage.getItem("primary_color") || configDB.data.color.primary_color;

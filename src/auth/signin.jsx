@@ -137,10 +137,6 @@ const Signin = () => {
                                 onChange={(e) => setPassword(e.target.value)}
                               />
                             </div>
-                            {/* <div className="checkbox p-0">
-                            <input id="checkbox1" type="checkbox" />
-                            <label htmlFor="checkbox1">{RememberMe}</label>
-                          </div> */}
                             <div className="form-group form-row mt-3 mb-0 d-grid">
                               {!isFetching && (
                                 <button

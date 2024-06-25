@@ -22,7 +22,7 @@ const Sidebar = () => {
             if (token != "") {
                 const responseJson = await apiPost(Routes.LOGINSYC);
                 if (responseJson.status) {
-                    localStorage.setItem(AppCaches.role_type, responseJson.data.user_role);
+                    localStorage.setItem(AppCaches.role_type, responseJson.data.role_type);
 
                     localStorage.setItem(
                         AppCaches.authPermissions,

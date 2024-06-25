@@ -1,12 +1,13 @@
 import { Fragment, useEffect, useState } from "react";
 import { LogOut } from "react-feather";
-import {  Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import AppLangKeys from "../../../localization/AppLangKeys";
 import AppCaches from "../../../constant/AppCaches";
 import { toast } from "react-toastify";
 import { apiPost } from "../../../api/http";
 import Routes from "../../../constant/Routes";
+import AppPaths from "../../../constant/AppPaths";
 
 const UserMenu = () => {
   const [_, setProfile] = useState<any>("");
@@ -26,10 +27,10 @@ const UserMenu = () => {
       toast.error(responseJson.message);
     }
     localStorage.clear();
-    navigate(`${process.env.PUBLIC_URL}/login`);
+    navigate(`${AppPaths.login}`);
   };
 
-  const loginData = JSON.parse(localStorage.getItem(AppCaches.loginData)?? '')
+  const loginData = JSON.parse(localStorage.getItem(AppCaches.loginData) ?? '')
 
   return (
     <Fragment>
@@ -61,7 +62,7 @@ const UserMenu = () => {
             </a>
           </li> */}
           <li>
-            <Link to={`${process.env.PUBLIC_URL}/dashboard/settings`}>
+            <Link to={`${AppPaths.settings}`}>
               {/* <Settings /> */}
               {t(AppLangKeys.settings)}
             </Link>

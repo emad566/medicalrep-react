@@ -39,7 +39,6 @@ export const MENUITEMS: MenuItem[] = [
     path: "/dashboard/settings",
     permissions: ['Setting_Index'],
     role_types: ['Developer', 'Admin', "User"],
-
   },
 
 

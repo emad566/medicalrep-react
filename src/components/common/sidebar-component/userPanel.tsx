@@ -3,8 +3,6 @@ import { Edit } from 'react-feather';
 import AppCaches from "../../../constant/AppCaches";
 import { toast } from 'react-toastify';
 import Routes from '../../../constant/Routes';
-import { Link } from 'react-router-dom';
-import AppPaths from '../../../constant/AppPaths';
 import { apiGet } from '../../../api/http';
 
 const UserPanel = () => {
@@ -31,10 +29,10 @@ const UserPanel = () => {
         <Fragment>
             <div className="sidebar-user text-center" >
                 <div >
-                    <img style={{ width: '20px !important', height: '20px !important' }} className=" lazyloaded blur-up" src={logoUrl} alt="#" />
+                    <img className="lazyloaded blur-up" src={logoUrl} alt="#" width="100" height="100" />
                     <div className="profile-edit">
                         {/* <Link to={`${AppPaths.userProfile}`}> */}
-                            <Edit />
+                        <Edit />
                         {/* </Link> */}
                     </div>
                 </div>

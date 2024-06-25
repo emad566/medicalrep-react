@@ -4,7 +4,6 @@ import UserMenu from './userMenu';
 import { Link } from 'react-router-dom';
 import { AlignLeft, Maximize, MoreHorizontal } from 'react-feather';
 import logo from "../../../assets/images/logo.png";
-import ZidRequestRates from './ZidRequestRates';
 
 const Header = () => {
   const [_ , setSidebar] = useState<any>(false);

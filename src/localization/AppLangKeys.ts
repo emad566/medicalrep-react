@@ -52,9 +52,7 @@ const AppLangKeys = {
   tenantNameMustBeGraterThan_3Letters:
     "Tenant name must be grater than 3 letters",
   youMustSelectOneRole: "You must select one role",
-  tenantName: "Tenant name",
-  choseRoles: "Chose roles",
-  Active: "Active",
+  tenantName: "Tenant name", 
   edit: "Edit",
   areYouSureYouWantDelete: "Are you sure you want delete",
   yes: "Yes",

@@ -82,3 +82,29 @@
 .btn-close:hover::before {
     color: red;
 }
+
+
+/* Fix First Column */
+/* Custom styling to fix the first column */
+.dataTable {
+    overflow-x: auto;
+  }
+  
+  .dataTable table {
+    table-layout: fixed;
+  }
+  
+  .dataTable table td:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: #fff; /* Adjust with your table background color */
+  }
+  
+  .dataTable table th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 2; /* Ensure the header remains above the column */
+    background: #f3f3f3; /* Adjust with your header background color */
+  }
+/* Fix First Column */

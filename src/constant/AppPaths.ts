@@ -8,6 +8,8 @@ const AppPaths = {
   settings: `${BASE_DASHBOARD_URL}settings`,
   userProfile: `${BASE_DASHBOARD_URL}users/profile`,
   userProfilePassword: `${BASE_DASHBOARD_URL}users/profile/password`,
+  CompanyProducts: `${BASE_DASHBOARD_URL}CompanyProducts`,
+  ListVisits: `${BASE_DASHBOARD_URL}ListVisits`,
 };
 
 export default AppPaths;

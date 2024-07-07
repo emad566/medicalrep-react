@@ -11,4 +11,9 @@ export default {
   LOGOUT: `${apiUrl}users/logout`,
   LOGINSYC: `${apiUrl}auth/loginsync`,
   profile: `${apiUrl}users/profile`,
+  CompanyProducts: `${apiUrl}CompanyProducts`,
+  CompanyProduct: `${apiUrl}CompanyProduct`,
+  uploadCsv: `${apiUrl}CompanyProduct/uploadCsv`,
+  updateTotal: `${apiUrl}CompanyProduct/updateTotal`,
+  visits: `${apiUrl}visits`,
 };

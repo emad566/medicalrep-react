@@ -1,5 +1,6 @@
-import { Home, Settings } from "react-feather";
+import { Calendar, Home, PhoneCall, Settings } from "react-feather";
 import AppLangKeys from "../../../localization/AppLangKeys";
+import AppPaths from "../../../constant/AppPaths";
 
 interface MenuItem {
   title: string;
@@ -40,6 +41,24 @@ export const MENUITEMS: MenuItem[] = [
     permissions: ['Setting_Index'],
     role_types: ['Developer', 'Admin', "User"],
   },
-
-
+  {
+    title: `${AppLangKeys.MonthlyReport}`,
+    icon: Calendar,
+    type: "link",
+    badgeType: "primary",
+    active: false,
+    path: AppPaths.CompanyProducts,
+    permissions: ['User_Index'],
+    role_types: ['Developer', 'Admin', "User"],
+  }, 
+  {
+    title: `${AppLangKeys.ListVisits}`,
+    icon: PhoneCall,
+    type: "link",
+    badgeType: "primary",
+    active: false,
+    path: AppPaths.ListVisits,
+    permissions: ['User_Index'],
+    role_types: ['Developer', 'Admin', "User"],
+  }, 
 ];

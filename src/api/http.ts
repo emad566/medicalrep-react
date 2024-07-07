@@ -1,6 +1,7 @@
 import AppPaths from "../constant/AppPaths";
 import Routes from "../constant/Routes";
 import { BearerTOKEN, CUSTOMER } from "../constant/constants";
+import axios from 'axios';
 
 export async function loginTenant(
   customer: string,
@@ -54,9 +55,9 @@ export async function apiGetFile(url: string, data = {}, fileName = "") {
       throw new Error("Failed to fetch GET ");
     }
 
-    const contentType = response.headers.get("Content-Type");
+    // const contentType = response.headers.get("Content-Type");
 
-    if (contentType && contentType.startsWith("application/")) {
+    // if (contentType && contentType.startsWith("application/")) {
       const blob = await response.blob();
       const url = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
@@ -76,9 +77,9 @@ export async function apiGetFile(url: string, data = {}, fileName = "") {
       link.click();
       window.URL.revokeObjectURL(url); // Clean up the object URL
       // return;
-    } else {
-      return response.json(); // Parse as JSON
-    }
+    // } else {
+    //   return response.json(); // Parse as JSON
+    // }
   } catch (error) {
     return error;
   }
@@ -108,6 +109,53 @@ export async function apiGet(url: string, data = {}) {
       }
 
       throw new Error("Failed to fetch GET ");
+    }
+
+    if (!responseJson.status && responseJson.data?.unAuth == 1) {
+      window.location.replace(AppPaths.home);
+    }
+
+    return responseJson;
+  } catch (error) {
+    return error;
+  }
+}
+
+
+export async function apiPostFiles(url: string, data:any = {}, setProgress:any) {
+
+  try {
+    const formData = new FormData();
+
+    for (const key in data) {
+      formData.append(key, data[key]);
+    }
+    
+    const headers = {
+      customer: `${CUSTOMER()}`,
+      lang: "en",
+      Authorization: BearerTOKEN(),
+    };
+
+    const response = await axios.post(url, formData, {
+      headers,
+      onUploadProgress: (event) => {
+        const total = event.total?? 1;
+        const loaded = event.loaded?? 1;
+        const percentage = Math.round((loaded / total) * 100);
+        setProgress(percentage);
+      },
+    });
+
+    const responseJson = response.data; 
+
+    if (!response) {
+      if (responseJson.message == "Unauthenticated.") {
+        localStorage.clear();
+        window.location.replace(AppPaths.login);
+      }
+
+      throw new Error("Failed to fetch Post ");
     }
 
     if (!responseJson.status && responseJson.data?.unAuth == 1) {

@@ -1,3 +1,4 @@
+ 
 const AppLangKeys = {
   Dashboard: "Dashboard",
   Arabic: "Arabic",
@@ -84,6 +85,33 @@ const AppLangKeys = {
   settings: "Settings",
   content: "Content",
   logout: "Logout",
+  
+  MonthlyReport: "Monthly report",
+  month: "Month",
+  year: "Year",
+  downloadTemplate: "Download template",
+  total: "Total",
+
+  ListVisits: "List visits",
+
+  visit_id: "Visit id",
+  client_id: "Client id",
+  isOffline: "Is offline",
+  comment: "Comment",
+  visit_d_diff: "Visit d diff",
+  is_new: "Is new",
+  started_at: "Started at",
+  created_at: "Created at",
+  mocLocation: "Moc location",
+  client_name: "Client name",
+  village_name: "Village name",
+  visitstatues_title: "Visitstatues title",
+  visittype_title: "Visittype title",
+  double_user_name: "Double user name",
+  trible_user_name: "Trible user name",
+  specialist_names: "Specialist names",
+  in_out_place: "In out place",
+  clients_products_names: "Clients products names",
 };
 
 export default AppLangKeys;

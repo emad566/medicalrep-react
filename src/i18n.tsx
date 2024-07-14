@@ -304,6 +304,7 @@ i18n
           [AppLangKeys.medicalrep]: "المندوب",
 
           [AppLangKeys.specialists]: "التخصصات",
+          [AppLangKeys.TeamStatistics]: "احصاءات الفريق",
         },
       },
     },

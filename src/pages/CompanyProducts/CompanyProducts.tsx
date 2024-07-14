@@ -13,6 +13,7 @@ import JsxSelect from "../../app-components/JsxSelect";
 import AppCaches from "../../constant/AppCaches"; 
 import UploadCompanyProduct from "./components/UploadCompanyProduct";
 import JsxTextInput from "../../app-components/JsxTextInput"; 
+import CompanyCheckBoxGroupSelector from "./components/CompanyCheckBoxGroupSelector";
 
 const CompanyProducts = () => {
   const { t } = useTranslation();
@@ -23,8 +24,10 @@ const CompanyProducts = () => {
     product_names : [],
     company_codes : [],
     names : [],
-    items : []
+    calcNames : [],
+    items : [],
   });
+
   const [loading, setLoading] = useState<any>(true); 
   const [createOptions, setCreateOptions] = useState<any>({
     isOpen: false,
@@ -40,7 +43,18 @@ const CompanyProducts = () => {
     name: localStorage.getItem(`${AppCaches.loginName}`)?? '',
     month: new Date().getMonth(),
     year: new Date().getFullYear(), 
+    isGroup: false,
   });
+
+  function queryParamsBtnActionHandler(actions:any): void {
+    const queryData = {
+      ...queryParams,
+      ...actions, 
+    }; 
+    handleList(queryData);
+    setQueryParams(() => queryData);
+    console.log(queryParams);
+  }
 
   function queryParamsHandler(key:string, value:any): void {
     const queryData = {
@@ -209,7 +223,7 @@ const CompanyProducts = () => {
                     onChange = {(event:any)=>{queryParamsHandler('name', event?.target?.value)}}
                   />
                 </div>
-                <div className="col-sm-12 col-md-3">  
+                <div className="col-sm-12 col-md-2">  
                   <JsxSelect 
                     label = {t(AppLangKeys.month)}
                     options = {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]}
@@ -217,7 +231,7 @@ const CompanyProducts = () => {
                     onChange = {(event:any)=>{queryParamsHandler('month', event?.target?.value)}}
                   />
                 </div>
-                <div className="col-sm-12 col-md-3">  
+                <div className="col-sm-12 col-md-2">  
                   <JsxSelect 
                     label = {t(AppLangKeys.year)}
                     options = {yearsArray}
@@ -225,7 +239,10 @@ const CompanyProducts = () => {
                     onChange = {(event:any)=>{queryParamsHandler('year', event?.target?.value)}}
                   />
                 </div>
-                <div className="col-sm-12 col-md-3">  
+                <div className="col-sm-12 col-md-3">
+                  <CompanyCheckBoxGroupSelector onChange={queryParamsBtnActionHandler} />
+                </div>
+                <div className="col-sm-12 col-md-2">  
                   <JsxTextInput
                     label={t(AppLangKeys.total)}
                     name="total"
@@ -236,6 +253,19 @@ const CompanyProducts = () => {
                   /> 
                 </div>
               </div> 
+              <div className="row">
+                  <div className="col-md-6" style={{ padding:"0 40px" }}>
+                    { data.role_type } : {data.role}
+                  </div>
+                  <div className="col-md-6" style={{ padding:"0 40px" }}>
+                  User_Manage_All: { data.User_Manage_All }
+                  </div>
+              </div>
+              <div className="row">
+                  <div className="col-md-12" style={{ padding:"0 40px" }}>
+                    { data.calcNames.join(', ') }
+                  </div>
+              </div>
                 
               
               <div className="card-header">

@@ -117,6 +117,7 @@ const AppLangKeys = {
   products: "Products",
   specialist_name: "Specialist",
   is_active: "Is active",
+  TeamStatistics: "Team statistics",
   
 };
 

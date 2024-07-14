@@ -110,8 +110,14 @@ const AppLangKeys = {
   double_user_name: "Double user name",
   trible_user_name: "Trible user name",
   specialist_names: "Specialist names",
-  in_out_place: "In out place",
   clients_products_names: "Clients products names",
+  medicalrep: "Medicalrep",
+  
+  specialists: "Specialists",
+  products: "Products",
+  specialist_name: "Specialist",
+  is_active: "Is active",
+  
 };
 
 export default AppLangKeys;

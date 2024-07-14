@@ -16,4 +16,5 @@ export default {
   uploadCsv: `${apiUrl}CompanyProduct/uploadCsv`,
   updateTotal: `${apiUrl}CompanyProduct/updateTotal`,
   visits: `${apiUrl}visits`,
+  specialists: `${apiUrl}specialists`,
 };

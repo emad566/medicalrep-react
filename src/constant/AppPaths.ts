@@ -10,6 +10,7 @@ const AppPaths = {
   userProfilePassword: `${BASE_DASHBOARD_URL}users/profile/password`,
   CompanyProducts: `${BASE_DASHBOARD_URL}CompanyProducts`,
   ListVisits: `${BASE_DASHBOARD_URL}ListVisits`,
+  Specialists: `${BASE_DASHBOARD_URL}Specialists`,
 };
 
 export default AppPaths;

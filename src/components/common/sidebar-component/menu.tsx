@@ -61,4 +61,14 @@ export const MENUITEMS: MenuItem[] = [
     permissions: ['User_Index'],
     role_types: ['Developer', 'Admin', "User"],
   }, 
+  {
+    title: `${AppLangKeys.specialists}`,
+    icon: PhoneCall,
+    type: "link",
+    badgeType: "primary",
+    active: false,
+    path: AppPaths.Specialists,
+    permissions: ['User_Index'],
+    role_types: ['Developer', 'Admin', "User"],
+  }, 
 ];

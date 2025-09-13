@@ -119,6 +119,35 @@ const AppLangKeys = {
   is_active: "Is active",
   TeamStatistics: "Team statistics",
   
+  // Users Visits Statistics
+  UsersVisitsStatistics: "Users Visits Statistics",
+  user_id: "User ID",
+  username: "Username",
+  first_AM_city: "First AM City",
+  first_AM_time: "First AM Time",
+  last_AM_time: "Last AM Time",
+  AM_count: "AM Count",
+  AM_double_triple_count: "AM Double/Triple Count",
+  first_PM_city: "First PM City",
+  first_PM_time: "First PM Time",
+  last_PM_time: "Last PM Time",
+  PM_count: "PM Count",
+  PM_double_triple_count: "PM Double/Triple Count",
+  first_PH_city: "First PH City",
+  first_PH_time: "First PH Time",
+  last_PH_time: "Last PH Time",
+  PH_count: "PH Count",
+  PH_double_triple_count: "PH Double/Triple Count",
+  total_visits_count: "Total Visits Count",
+  date_from: "Date From",
+  date_to: "Date To",
+  export: "Export",
+  exportToExcel: "Export to Excel",
+  filter: "Filter",
+  clear: "Clear",
+  success: "Success",
+  noDataFound: "No data found",
+  
 };
 
 export default AppLangKeys;

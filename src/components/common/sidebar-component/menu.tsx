@@ -1,4 +1,4 @@
-import { Calendar, Home, PhoneCall, Settings } from "react-feather";
+import { Calendar, Home, PhoneCall, Settings, BarChart } from "react-feather";
 import AppLangKeys from "../../../localization/AppLangKeys";
 import AppPaths from "../../../constant/AppPaths";
 
@@ -68,6 +68,16 @@ export const MENUITEMS: MenuItem[] = [
     badgeType: "primary",
     active: false,
     path: AppPaths.Specialists,
+    permissions: ['User_Index'],
+    role_types: ['Developer', 'Admin', "User"],
+  }, 
+  {
+    title: `${AppLangKeys.UsersVisitsStatistics}`,
+    icon: BarChart,
+    type: "link",
+    badgeType: "primary",
+    active: false,
+    path: AppPaths.UsersVisitsStatistics,
     permissions: ['User_Index'],
     role_types: ['Developer', 'Admin', "User"],
   }, 

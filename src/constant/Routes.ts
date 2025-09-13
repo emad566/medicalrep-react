@@ -17,4 +17,5 @@ export default {
   updateTotal: `${apiUrl}CompanyProduct/updateTotal`,
   visits: `${apiUrl}visits`,
   specialists: `${apiUrl}specialists`,
+  usersVisitsStatistics: `${apiUrl}reports/users-visits-statistics`,
 };

@@ -11,6 +11,7 @@ const AppPaths = {
   CompanyProducts: `${BASE_DASHBOARD_URL}CompanyProducts`,
   ListVisits: `${BASE_DASHBOARD_URL}ListVisits`,
   Specialists: `${BASE_DASHBOARD_URL}Specialists`,
+  UsersVisitsStatistics: `${BASE_DASHBOARD_URL}UsersVisitsStatistics`,
 };
 
 export default AppPaths;

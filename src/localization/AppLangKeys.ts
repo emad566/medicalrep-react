@@ -122,7 +122,6 @@ const AppLangKeys = {
   // Users Visits Statistics
   UsersVisitsStatistics: "Users Visits Statistics",
   user_id: "User ID",
-  username: "Username",
   first_AM_city: "First AM City",
   first_AM_time: "First AM Time",
   last_AM_time: "Last AM Time",
